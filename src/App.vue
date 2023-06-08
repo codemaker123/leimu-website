@@ -20,6 +20,21 @@ export default {
     Navbar,
     Home,
     Footer
+  },
+  mounted() {
+    this.calculateFontSize();
+    window.addEventListener('resize', this.calculateFontSize);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.calculateFontSize);
+  },
+  methods: {
+    calculateFontSize() {
+      const screenWidth = window.innerWidth;
+      // 根据屏幕宽度计算字体大小
+      const fontSize = screenWidth / 150; // 根据实际需求进行调整
+      document.documentElement.style.fontSize = `${fontSize}px`;
+    }
   }
 }
 </script>

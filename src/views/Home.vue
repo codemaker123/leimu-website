@@ -199,6 +199,9 @@ export default {
     this.fullPageInstance = new fullpage('#fullpage', {
       // 设置选项和配置
       navigation: true, // 显示导航小圆点
+      responsiveWidth: 768, // 设置屏幕宽度阈值，低于该值时触发自适应
+      responsiveHeight: 0, // 设置屏幕高度阈值，0表示始终触发自适应
+      responsiveSlides: true, // 是否对幻灯片进行自适应
       onLeave: (origin, destination, direction) => {
         // 滚动到最后一屏时显示Footer
         if (destination.index === 3) {
