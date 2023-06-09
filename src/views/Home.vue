@@ -149,7 +149,7 @@
           服务需求:
           <input placeholder="" name="demand" id="demand" />
         </div>
-        <div style="margin-left: 20rem">
+        <div style="margin-left: 18rem;margin-top: 1.5rem">
           <el-button style="color: #1a93a8;margin-right: 10rem;">立即提交</el-button>
         </div>
       </div>
@@ -185,7 +185,10 @@ export default {
   data() {
     return {
       showFooter: false, // 控制是否显示Footer
-      fullPageInstance: null
+      fullPageInstance: null,
+      screenWidth: 0,
+      screenHeight: 0,
+      breakpoint: 1920, // 设定断点宽度
     };
   },
   created() {
@@ -211,14 +214,24 @@ export default {
         }
       }
     });
+    this.getScreenSize();
+    window.addEventListener('resize', this.getScreenSize);
   },
   beforeUnmount() {
     // 在组件销毁前清除 fullPage.js 对象
     this.fullPageInstance = null
   },
   computed() {
+    isLargeScreen()
+    {
+      return this.screenWidth >= this.breakpoint;
+    }
   },
   methods: {
+    getScreenSize() {
+      this.screenWidth = window.innerWidth;
+      this.screenHeight = window.innerHeight;
+    }
   }
 };
 </script>
@@ -467,6 +480,8 @@ export default {
   margin-left: 4.5rem;
   width: 50%;
   height: 31%;
+  background-size: contain;
+  margin-bottom: 0.5rem;
 }
 .page3-box2 {
   background-image: url(../assets/img/box-2.png);
@@ -476,6 +491,8 @@ export default {
   margin-left: 4.5rem;
   width: 50%;
   height: 31%;
+  background-size: contain;
+  margin-bottom: 0.7rem;
 }
 .page3-box3 {
   background-image: url(../assets/img/box-3.png);
@@ -484,7 +501,10 @@ export default {
   /*margin-top: 1rem;*/
   margin-left: 4.5rem;
   width: 50%;
-  height: 37%;
+  height: 35%;
+  background-size: contain;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 .page3-box4 {
   background-image: url(../assets/img/box-4.png);
@@ -494,6 +514,9 @@ export default {
   margin-left: 4.5rem;
   width: 50%;
   height: 37%;
+  background-size: contain;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 .page3-box5 {
   background-image: url(../assets/img/box-5.png);
@@ -503,32 +526,37 @@ export default {
   margin-left: 4.5rem;
   width: 50%;
   height: 37%;
+  background-size: contain;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 .form-click-img {
   background-image: url("../assets/img/green-click.png");
   background-repeat: no-repeat;
   position: absolute;
-  top: 75%;
-  left: 83%;
+  top: 59%;
+  left: 42%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 135rem;
-  height: 30rem;
+  width: 8rem;
+  height: 5rem;
+  background-size: contain;
 }
 .cust-form-bg {
   background-image: url("../assets/img/slide-four.png");
   background-repeat: no-repeat;
   position: absolute;
-  top: 85%;
-  left: 78%;
+  top: 78%;
+  left: 63%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 135rem;
-  height: 30rem;
+  width: 110rem;
+  height: 25rem;
+  background-size: contain;
 }
 .cust-form {
   position: absolute;
-  top: 87%;
+  top: 84%;
   left: 80%;
   transform: translate(-50%, -50%);
   text-align: left;
