@@ -210,7 +210,7 @@ html, body {
 .green-rectangle-row {
   display: flex;
   align-items: center;
-  margin-bottom: 10rem;
+  margin-bottom: 9rem;
 }
 
 .green-rectangle {

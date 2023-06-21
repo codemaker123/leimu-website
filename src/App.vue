@@ -47,7 +47,7 @@ export default {
   position: relative;
 }
 .navbar {
-  position: absolute;
+  /*position: absolute;*/
   z-index: 2;
 }
 </style>
