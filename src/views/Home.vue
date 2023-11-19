@@ -135,22 +135,22 @@
       <div class="cust-form">
         <div style="display:inline-block;margin: 0 8rem 3rem 1rem;">
           姓名:
-          <input placeholder="" name="custName" id="custName" />
+          <input placeholder="" name="custName" id="custName" v-model="formData.custName"/>
         </div>
         <div style="display:inline-block;">
           电话:
-          <input placeholder="" name="phoneNo" id="phoneNo" />
+          <input placeholder="" name="phoneNo" id="phoneNo" v-model="formData.phoneNo"/>
         </div><br/>
         <div style="display:inline-block;margin: 0 8rem 1rem 1rem;">
           单位名称:
-          <input placeholder="" name="companyName" id="companyName" />
+          <input placeholder="" name="companyName" id="companyName" v-model="formData.companyName"/>
         </div>
         <div style="display:inline-block;">
           服务需求:
-          <input placeholder="" name="demand" id="demand" />
+          <input placeholder="" name="demand" id="demand" v-model="formData.demand"/>
         </div>
         <div style="margin-left: 18rem;margin-top: 1.5rem">
-          <el-button style="color: #1a93a8;margin-right: 10rem;">立即提交</el-button>
+          <el-button style="color: #1a93a8;margin-right: 10rem;" @click="sendEmail">立即提交</el-button>
         </div>
       </div>
     </div>
@@ -177,6 +177,7 @@ import Footer from "@/components/Footer";
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import 'videojs-contrib-hls';
+import axios from "axios";
 
 export default {
   components: {
@@ -189,6 +190,12 @@ export default {
       screenWidth: 0,
       screenHeight: 0,
       breakpoint: 1920, // 设定断点宽度
+      formData: {
+        custName: '',
+        phoneNo: '',
+        companyName: '',
+        demand: ''
+      }
     };
   },
   created() {
@@ -231,6 +238,20 @@ export default {
     getScreenSize() {
       this.screenWidth = window.innerWidth;
       this.screenHeight = window.innerHeight;
+    },
+    sendEmail() {
+      console.log("已点击")
+      axios.post('http://159.75.175.104:3000/send-email', this.formData)
+          .then(response => {
+            console.log('邮件已发送：', response.data);
+            // 处理成功响应
+            alert('邮件发送成功！'); // 发送成功时弹出提示框
+          })
+          .catch(error => {
+            console.error('发送邮件失败：', error);
+            // 处理错误响应
+            alert('邮件发送失败！'); // 发送失败时弹出提示框
+          });
     }
   }
 };

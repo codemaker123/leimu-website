@@ -15,13 +15,13 @@
       <!--      <img :src="logoPath" alt="公司logo" class="logo-image">-->
       <span class="company-name">雷目智能科技有限公司</span>
     </el-menu-item>
-    <el-menu-item class="menu-item" index="/" >首页 </el-menu-item>
-    <el-menu-item class="menu-item" index="/products">产品中心</el-menu-item>
-    <el-menu-item class="menu-item" index="/cases" >行业案例</el-menu-item>
-    <el-menu-item class="menu-item" index="/aboutus" >走进雷目</el-menu-item>
-    <el-menu-item class="menu-item" index="/news" >公司新闻</el-menu-item>
-    <el-menu-item class="menu-item" index="/contactus" >联系我们</el-menu-item>
-    <el-menu-item class="menu-item" index="/jobs" >人才招聘</el-menu-item>
+<!--    <el-menu-item class="menu-item" index="/" >首页 </el-menu-item>-->
+<!--    <el-menu-item class="menu-item" index="/products">产品中心</el-menu-item>-->
+<!--    <el-menu-item class="menu-item" index="/cases" >行业案例</el-menu-item>-->
+<!--    <el-menu-item class="menu-item" index="/aboutus" >走进雷目</el-menu-item>-->
+<!--    <el-menu-item class="menu-item" index="/news" >公司新闻</el-menu-item>-->
+<!--    <el-menu-item class="menu-item" index="/contactus" >联系我们</el-menu-item>-->
+<!--    <el-menu-item class="menu-item" index="/jobs" >人才招聘</el-menu-item>-->
   </el-menu>
   <el-collapse v-else>
 <!--    <img :src="logoPath" alt="公司logo" class="logo-image">-->

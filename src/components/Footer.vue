@@ -30,10 +30,11 @@
         <span class="footer-section-title">关于我们</span>
         <p>微信二维码</p>
         <p>抖音</p>
+        <p>联系电话: 13630194792</p>
       </div>
     </div>
     <div style="margin-bottom: 2rem;font-size: 1.2rem">
-      Copyright@雷目智能科技（佛山）有限公司 &nbsp;&nbsp;&nbsp;&nbsp;备案号:123456789号
+      Copyright@雷目智能科技（佛山）有限公司 &nbsp;&nbsp;&nbsp;&nbsp;备案号:粤ICP备2023079344号
     </div>
   </div>
 </template>
